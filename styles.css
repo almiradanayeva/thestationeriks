@@ -1,0 +1,20 @@
+h1{
+    color:crimson;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.b1{
+    background-color: cornsilk;
+}
+.principalb {
+    background-image: url(principalback.png);
+}
+.mrssbg{
+    background-image: url(mrsscorchback.png);
+}
+.jakebg {
+    background-image: url("backgrounds/jakethebullybg.png");
+    height: auto;
+    width: auto;
+    background-position: center;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="b1">
+    <h1>Schedule</h1>
+    <table style="margin-left: auto; margin-right: auto; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:450%; width: 50%; color:coral">
+        <tr>
+            <th style="text-align: center;">Today</th>
+        </tr>
+        <tr>
+
+            <th width="65%" style="border:1px solid black">Next episode is at 5 pm!</th>
+            <th><img src="ytbell.png" height=75% width=75% onclick="notify()" alt="Notify me!"><p style="color: brown; font-size: 33%">Click the bell to send a reminder</p></th>
+        </tr>
+    </table>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        function notify(){
+            var x;
+            var email_info=prompt("Please enter your e-mail to get reminded: ", "your email here")
+            if  (email_info != null)
+            {
+                try
+                { 
+                    
+                Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "thestationarists@gmail.com",
+                    Password: "0F54736FFDB8EF4F4CD952153A64CE468860",
+                    Port: 2525,
+                    To: email_info,
+                    From: "thestationarists@gmail.com",
+                    Subject: "The Stationarists",
+                    Body: "Do not forget the next episode is at 5 pm!"}).then(message => alert(message + "! If you don't see the email, please check your Spam folder."))
+                }
+                catch(error)
+                {
+                    alert("Error: " + error);
+                }
+            }
+        }
+    </script>
+    <a href="home.html"><img src="buttons/gobackbutton.png" width="10%" height="10%"></a>
+</body>
